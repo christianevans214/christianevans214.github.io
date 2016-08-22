@@ -5,12 +5,22 @@
   -ms-user-select: none;
   user-select: none;
 }
+$red-dark: #C62828;
+$red-light: #FF5252;
+
+$font-size-small: 10px;
+$font-size-header: 28px;
+
+$calendar-grey: #777;
+
+$datepicker-border: 1px solid #000;
+$datepicker-width: 330px;
 
 .calendar-container {
-  border: 1px solid #000;
-  width: 330px;
+  border: $datepicker-border;
+  width: $datepicker-width;
   display: flex;
-  padding: 5px 10px;
+  background: white;
 
   & > div {
     width: 0;
@@ -18,18 +28,21 @@
 
   .calendar-display-container {
     flex-grow: 1;
-
+    border-right: $datepicker-border;
     & > div {
       text-align: center;
     }
 
     .display-weekday {
-      font-size: 12px;
-      padding: 10px 0 0 0;
+      font-size: $font-size-small;
+      padding: 7px 0;
+      background: linear-gradient($red-light, $red-dark);
+      color: white;
+      box-shadow: 0px 2px 4px #ccc;
     }
 
     .display-day {
-      font-size: 28px;
+      font-size: $font-size-header;
 
       h1 {
         margin: 20px;
@@ -40,7 +53,7 @@
     flex-grow: 2;
 
     .month-toggle {
-      font-size: 12px;
+      font-size: $font-size-small;
       display: flex;
       justify-content: space-between;
       padding: 10px 0 0 0;
@@ -48,6 +61,7 @@
 
       * {
         @extend %unselectable;
+        color: $calendar-grey;
       }
 
       .toggle {
@@ -57,7 +71,7 @@
 
     .datepicker {
       margin-top: 5px;
-      font-size: 10px;
+      font-size: $font-size-small;
 
       .datepicker-header {
         display: flex;
@@ -67,6 +81,7 @@
           flex-grow: 1;
           text-align: center;
           padding: 2px 0;
+          color: $red-light;
         }
       }
 
@@ -78,6 +93,7 @@
           flex-grow: 1;
           text-align: center;
           padding: 2px 0;
+          color: $calendar-grey;
           @extend %unselectable;
 
           &.day {
@@ -86,12 +102,12 @@
           }
           &.day:hover {
             color: white;
-            background: #FF5252;
+            background: $red-light;
           }
 
           &.active-day {
             color: white;
-            background: #C62828;
+            background: $red-dark;
           }
         }
       }

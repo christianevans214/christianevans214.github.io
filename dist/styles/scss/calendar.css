@@ -9,16 +9,20 @@
   border: 1px solid #000;
   width: 330px;
   display: flex;
-  padding: 5px 10px; }
+  background: white; }
   .calendar-container > div {
     width: 0; }
   .calendar-container .calendar-display-container {
-    flex-grow: 1; }
+    flex-grow: 1;
+    border-right: 1px solid #000; }
     .calendar-container .calendar-display-container > div {
       text-align: center; }
     .calendar-container .calendar-display-container .display-weekday {
-      font-size: 12px;
-      padding: 10px 0 0 0; }
+      font-size: 10px;
+      padding: 7px 0;
+      background: linear-gradient(#FF5252, #C62828);
+      color: white;
+      box-shadow: 0px 2px 4px #ccc; }
     .calendar-container .calendar-display-container .display-day {
       font-size: 28px; }
       .calendar-container .calendar-display-container .display-day h1 {
@@ -26,11 +30,13 @@
   .calendar-container .datepicker-container {
     flex-grow: 2; }
     .calendar-container .datepicker-container .month-toggle {
-      font-size: 12px;
+      font-size: 10px;
       display: flex;
       justify-content: space-between;
       padding: 10px 0 0 0;
       margin: 0 13px; }
+      .calendar-container .datepicker-container .month-toggle * {
+        color: #777; }
       .calendar-container .datepicker-container .month-toggle .toggle {
         cursor: pointer; }
     .calendar-container .datepicker-container .datepicker {
@@ -42,14 +48,16 @@
           width: 0;
           flex-grow: 1;
           text-align: center;
-          padding: 2px 0; }
+          padding: 2px 0;
+          color: #FF5252; }
       .calendar-container .datepicker-container .datepicker .datepicker-week {
         display: flex; }
         .calendar-container .datepicker-container .datepicker .datepicker-week span {
           width: 0;
           flex-grow: 1;
           text-align: center;
-          padding: 2px 0; }
+          padding: 2px 0;
+          color: #777; }
           .calendar-container .datepicker-container .datepicker .datepicker-week span.day {
             cursor: pointer;
             transition: .1s background ease-in-out; }

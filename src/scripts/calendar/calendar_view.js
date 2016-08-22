@@ -112,6 +112,18 @@ export default class Calendar {
   }
 
   /**
+   * Formats class name for a specific calendar day element.
+   * @param {number} day Calendar day.
+   * @return {string} Class string.
+   */
+  _formatDayClass(day) {
+    return [
+      this.dayIsSelectedDay(day) ? 'active-day' : '',
+      day === null ? '' : 'day',
+    ].join(' ');
+  }
+
+  /**
    * Constructs initial month toggler.
    * @return {Object} DOM element.
    */
@@ -135,18 +147,6 @@ export default class Calendar {
         }, '>'),
       ])
     );
-  }
-
-  /**
-   * Formats class name for a specific calendar day element.
-   * @param {number} day Calendar day.
-   * @return {string} Class string.
-   */
-  _formatDayClass(day) {
-    return [
-      this.dayIsSelectedDay(day) ? 'active-day' : '',
-      day === null ? '' : 'day',
-    ].join(' ');
   }
 
   /**
