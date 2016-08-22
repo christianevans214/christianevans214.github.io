@@ -13,3 +13,5 @@ To run tests:
 1) `cd` into base directory.
 2) `npm test`
 3) `pray nothing breaks`.
+
+File starts at ./src/scripts/main.js, and the calendar bit is found in ./src/scripts/calendar.
