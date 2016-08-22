@@ -1,0 +1,61 @@
+.calendar-container .datepicker-container .month-toggle *, .calendar-container .datepicker-container .datepicker .datepicker-week span {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.calendar-container {
+  border: 1px solid #000;
+  width: 330px;
+  display: flex;
+  padding: 5px 10px; }
+  .calendar-container > div {
+    width: 0; }
+  .calendar-container .calendar-display-container {
+    flex-grow: 1; }
+    .calendar-container .calendar-display-container > div {
+      text-align: center; }
+    .calendar-container .calendar-display-container .display-weekday {
+      font-size: 12px;
+      padding: 10px 0 0 0; }
+    .calendar-container .calendar-display-container .display-day {
+      font-size: 28px; }
+      .calendar-container .calendar-display-container .display-day h1 {
+        margin: 20px; }
+  .calendar-container .datepicker-container {
+    flex-grow: 2; }
+    .calendar-container .datepicker-container .month-toggle {
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0 0 0;
+      margin: 0 13px; }
+      .calendar-container .datepicker-container .month-toggle .toggle {
+        cursor: pointer; }
+    .calendar-container .datepicker-container .datepicker {
+      margin-top: 5px;
+      font-size: 10px; }
+      .calendar-container .datepicker-container .datepicker .datepicker-header {
+        display: flex; }
+        .calendar-container .datepicker-container .datepicker .datepicker-header span {
+          width: 0;
+          flex-grow: 1;
+          text-align: center;
+          padding: 2px 0; }
+      .calendar-container .datepicker-container .datepicker .datepicker-week {
+        display: flex; }
+        .calendar-container .datepicker-container .datepicker .datepicker-week span {
+          width: 0;
+          flex-grow: 1;
+          text-align: center;
+          padding: 2px 0; }
+          .calendar-container .datepicker-container .datepicker .datepicker-week span.day {
+            cursor: pointer;
+            transition: .1s background ease-in-out; }
+          .calendar-container .datepicker-container .datepicker .datepicker-week span.day:hover {
+            color: white;
+            background: #FF5252; }
+          .calendar-container .datepicker-container .datepicker .datepicker-week span.active-day {
+            color: white;
+            background: #C62828; }

@@ -1,0 +1,100 @@
+%unselectable {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.calendar-container {
+  border: 1px solid #000;
+  width: 330px;
+  display: flex;
+  padding: 5px 10px;
+
+  & > div {
+    width: 0;
+  }
+
+  .calendar-display-container {
+    flex-grow: 1;
+
+    & > div {
+      text-align: center;
+    }
+
+    .display-weekday {
+      font-size: 12px;
+      padding: 10px 0 0 0;
+    }
+
+    .display-day {
+      font-size: 28px;
+
+      h1 {
+        margin: 20px;
+      }
+    }
+  }
+  .datepicker-container {
+    flex-grow: 2;
+
+    .month-toggle {
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0 0 0;
+      margin: 0 13px;
+
+      * {
+        @extend %unselectable;
+      }
+
+      .toggle {
+        cursor: pointer;
+      }
+    }
+
+    .datepicker {
+      margin-top: 5px;
+      font-size: 10px;
+
+      .datepicker-header {
+        display: flex;
+
+        span {
+          width: 0;
+          flex-grow: 1;
+          text-align: center;
+          padding: 2px 0;
+        }
+      }
+
+      .datepicker-week {
+        display: flex;
+
+        span {
+          width: 0;
+          flex-grow: 1;
+          text-align: center;
+          padding: 2px 0;
+          @extend %unselectable;
+
+          &.day {
+            cursor: pointer;
+            transition: .1s background ease-in-out;
+          }
+          &.day:hover {
+            color: white;
+            background: #FF5252;
+          }
+
+          &.active-day {
+            color: white;
+            background: #C62828;
+          }
+        }
+      }
+    }
+  }
+}
