@@ -42,6 +42,18 @@ export default class Calendar {
       year: today.getFullYear(),
     };
     this.init();
+    this.registerKeyUpEvents();
+  }
+
+  /**
+   * Registers left arrow and right arrow key events for changing month.
+   */
+  registerKeyUpEvents() {
+    document.addEventListener('keyup', (evt) => {
+      const key = evt.keyCode ? evt.keyCode : evt.which;
+      if (key === 37) this.onClickToggleMonth(-1);
+      if (key === 39) this.onClickToggleMonth(1);
+    });
   }
 
   /**

@@ -15,3 +15,5 @@ To run tests:
 3) `pray nothing breaks`.
 
 File starts at ./src/scripts/main.js, and the calendar bit is found in ./src/scripts/calendar.
+
+Live version of calendar can be seen [here](https://christianevans214.github.io/)
